@@ -10,38 +10,38 @@ if exists("b:current_syntax")
 endif
 
 syntax  match  TodoDone       '^[xX]\s.\+$'
-syntax  match  TodoPriorityA  '^(A)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityB  '^(B)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityC  '^(C)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityD  '^(D)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityE  '^(E)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityF  '^(F)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityG  '^(G)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityH  '^(H)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityI  '^(I)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityJ  '^(J)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityK  '^(K)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityL  '^(L)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityM  '^(M)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityN  '^(N)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityO  '^(O)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityP  '^(P)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityQ  '^(Q)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityR  '^(R)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityS  '^(S)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityT  '^(T)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityU  '^(U)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityV  '^(V)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityW  '^(W)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityX  '^(X)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityY  '^(Y)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityZ  '^(Z)\s'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityA  '^(A)\s'
+syntax  match  TodoPriorityB  '^(B)\s'
+syntax  match  TodoPriorityC  '^(C)\s'
+syntax  match  TodoPriorityD  '^(D)\s'
+syntax  match  TodoPriorityE  '^(E)\s'
+syntax  match  TodoPriorityF  '^(F)\s'
+syntax  match  TodoPriorityG  '^(G)\s'
+syntax  match  TodoPriorityH  '^(H)\s'
+syntax  match  TodoPriorityI  '^(I)\s'
+syntax  match  TodoPriorityJ  '^(J)\s'
+syntax  match  TodoPriorityK  '^(K)\s'
+syntax  match  TodoPriorityL  '^(L)\s'
+syntax  match  TodoPriorityM  '^(M)\s'
+syntax  match  TodoPriorityN  '^(N)\s'
+syntax  match  TodoPriorityO  '^(O)\s'
+syntax  match  TodoPriorityP  '^(P)\s'
+syntax  match  TodoPriorityQ  '^(Q)\s'
+syntax  match  TodoPriorityR  '^(R)\s'
+syntax  match  TodoPriorityS  '^(S)\s'
+syntax  match  TodoPriorityT  '^(T)\s'
+syntax  match  TodoPriorityU  '^(U)\s'
+syntax  match  TodoPriorityV  '^(V)\s'
+syntax  match  TodoPriorityW  '^(W)\s'
+syntax  match  TodoPriorityX  '^(X)\s'
+syntax  match  TodoPriorityY  '^(Y)\s'
+syntax  match  TodoPriorityZ  '^(Z)\s'
 
 syntax  match  TodoDate       '\d\{2,4\}-\d\{2\}-\d\{2\}' contains=NONE
 syntax  match  TodoProject    '\(^\|\W\)+[^[:blank:]]\+'  contains=NONE
 syntax  match  TodoContext    '\(^\|\W\)@[^[:blank:]]\+'  contains=NONE
 syntax  match  TodoTag        '\(^\|\W\)#[^[:blank:]]\+'  contains=NONE
-syntax  match  TodoAttr        '\(^\|\W\)(issue:|created:|updated:)[^[:blank:]]\+'  contains=NONE
+syntax  match  TodoIssue       '\(^\|\W\)issue:[^[:blank:]]\+'  contains=NONE
 
 " Other priority colours might be defined by the user
 highlight  default  link  TodoDone       Comment
@@ -52,7 +52,7 @@ highlight  default  link  TodoDate       PreProc
 highlight  default  link  TodoProject    Type
 highlight  default  link  TodoContext    Special
 highlight  default  link  TodoTag        Special
-highlight  default  link  TodoAttr       Type
+highlight  default  link  TodoIssue      Comment
 
 if exists('g:todo_load_python') && g:todo_load_python
     if has('python')
